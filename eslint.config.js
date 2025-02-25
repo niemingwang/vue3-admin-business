@@ -52,6 +52,14 @@ const tsConfig = {
     'prettier/prettier': 'error',
     'arrow-body-style': 'off',
     'prefer-arrow-callback': 'off',
+    '@typescript-eslint/no-unused-expressions': [
+      'error',
+      {
+        allowShortCircuit: true,
+        allowTernary: true,
+        allowTaggedTemplates: true
+      }
+    ],
     '@typescript-eslint/no-explicit-any': 'off'
   }
 }
