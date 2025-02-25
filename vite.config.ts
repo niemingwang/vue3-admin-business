@@ -1,7 +1,17 @@
 import { defineConfig } from 'vite'
-import vue from '@vitejs/plugin-vue'
+import { useVitePlugins } from './config/vite-plugins.ts'
+import { resolve } from 'node:path'
+
+const buildVitePluginsFn = useVitePlugins()
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [vue()]
+  plugins: buildVitePluginsFn(),
+
+  resolve: {
+    alias: {
+      // @ 符号指向 src 目录
+      '@': resolve(__dirname, 'src')
+    }
+  }
 })

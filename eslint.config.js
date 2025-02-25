@@ -12,7 +12,10 @@ const ignores = {
 /** 全局生效配置 */
 const globalConfig = {
   files: ['**/*.{js,mjs,cjs,ts,vue}'],
-  languageOptions: { globals: globals.browser }
+  languageOptions: { globals: globals.browser },
+  rules: {
+    'vue/multi-word-component-names': 'off'
+  }
 }
 
 /** vue规则 */
@@ -55,14 +58,6 @@ const tsConfig = {
 
 /** @type {import('eslint').Linter.Config[]} */
 export default [
-  ignores,
-
-  globalConfig,
-
-  vueConfig,
-
-  tsConfig,
-
   /** js推荐配置 */
   pluginJs.configs.recommended,
   /** ts推荐配置 */
@@ -70,5 +65,13 @@ export default [
   /** vue推荐配置 */
   ...pluginVue.configs['flat/essential'],
   /** Prettier推荐配置 */
-  eslintPluginPrettierRecommended
+  eslintPluginPrettierRecommended,
+
+  ignores,
+
+  globalConfig,
+
+  vueConfig,
+
+  tsConfig
 ]

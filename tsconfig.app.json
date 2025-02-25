@@ -1,8 +1,16 @@
 {
   "extends": "@vue/tsconfig/tsconfig.dom.json",
   "compilerOptions": {
+    "baseUrl": "./",
+    "paths": {
+      "@/*": ["src/*"],
+      "components/*": ["src/components/*"],
+      "assets": ["src/assets/*"]
+    },
     "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
-
+    "types": ["vite/client", "vite-plugin-svg-icons/client"],
+    "outDir": "target", // 请保留这个属性，防止tsconfig.json文件报错
+    "typeRoots": ["./node_modules", "./node_modules/@types/"],
     /* Linting */
     "strict": true,
     "noUnusedLocals": true,
@@ -10,5 +18,6 @@
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true
   },
-  "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.vue"]
+  "include": ["**/*.ts", "**/*.tsx", "**/*.vue", "**/*.d.ts"],
+  "exclude": ["node_modules", "dist", "dest/**"]
 }
