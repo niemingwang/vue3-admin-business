@@ -1,6 +1,6 @@
 import type { Router } from 'vue-router'
-import { useToken } from '@/hooks/use-token.ts'
-import { useNprogress } from '@/hooks/use-nprogress.ts'
+import { useToken } from '@/common/hooks/use-token.ts'
+import { useNprogress } from '@/common/hooks/use-nprogress.ts'
 
 const { start, done } = useNprogress()
 const { getToken, removeToken } = useToken()

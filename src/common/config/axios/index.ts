@@ -1,4 +1,6 @@
+import qs from 'qs'
 import axios, { type AxiosRequestConfig } from 'axios'
+import { initInterceptors } from '@/common/config/axios/interceptors.ts'
 
 const request = axios.create({
   baseURL: '',
@@ -6,9 +8,17 @@ const request = axios.create({
   withCredentials: false,
   headers: {
     'Content-Type': 'application/json'
+  },
+  // 自定义参数序列化函数
+  paramsSerializer: (params) => {
+    return qs.stringify(params, { allowDots: true })
   }
 })
 
+// 初始化 Axios 请求拦截器
+initInterceptors(request)
+
+// 导出整合后的 Axios 实例
 export default {
   get: async <T = any>(options: AxiosRequestConfig): Promise<T> => {
     const res = await request({ method: 'GET', ...options })

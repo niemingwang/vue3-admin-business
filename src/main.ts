@@ -1,6 +1,9 @@
 import { createApp } from 'vue'
 import App from './App.vue'
 
+// 引入 mock
+import '@/mock'
+
 // 引入 arco-design
 import { setupArcoDesign } from '@/plugins/arcoDesign'
 

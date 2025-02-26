@@ -6,7 +6,7 @@ import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended'
 
 /** 忽略文件 */
 const ignores = {
-  ignores: ['dist', 'public', 'node_modules']
+  ignores: ['dist', 'public', 'node_modules', '*.yaml', '*.json']
 }
 
 /** 全局生效配置 */
