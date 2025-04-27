@@ -4,7 +4,7 @@ import type { NProgressOptions } from 'nprogress'
 
 const showNProgress = import.meta.env.VITE_APP_NPROGRESS === 'true'
 
-export const useNprogress = () => {
+export const useNProgress = () => {
   NProgress.configure({ showSpinner: false } as NProgressOptions)
 
   const start = () => {

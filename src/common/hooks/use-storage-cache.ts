@@ -1,4 +1,5 @@
 import WebStorageCache from 'web-storage-cache'
+import { CacheKey } from '@/common/constants/cache-key.ts'
 
 type StorageCache = 'localStorage' | 'sessionStorage'
 
@@ -19,4 +20,12 @@ export const useStorageCache = (type: StorageCache = 'localStorage') => {
   })
 
   return { cache }
+}
+
+export const deleteUserCache = () => {
+  if (cache) {
+    cache.delete(CacheKey.USER_INFO)
+    cache.delete(CacheKey.USER_ROUTERS)
+    cache.delete(CacheKey.USER_PERMISSION)
+  }
 }

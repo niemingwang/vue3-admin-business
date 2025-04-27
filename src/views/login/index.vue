@@ -1,11 +1,13 @@
 <template>
-  <div class="login-container">
-    <a-card class="login-wrapper">
-      <div class="login-info">
-        <LoginLogo />
-      </div>
-      <AccountPassword />
-    </a-card>
+  <div class="app-login-page">
+    <div class="login-container">
+      <a-card class="login-wrapper">
+        <div class="login-info">
+          <LoginLogo />
+        </div>
+        <AccountPassword />
+      </a-card>
+    </div>
   </div>
 </template>
 
@@ -17,18 +19,31 @@ defineOptions({ name: 'Login' })
 </script>
 
 <style scoped>
-.login-container {
+.app-login-page {
   height: 100vh;
   display: flex;
+  position: relative;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  background: url('../../assets/images/png/login-bg.png') no-repeat center center;
+  background-size: cover;
+}
+
+.login-container {
+  padding: 50px;
+  display: flex;
+  position: absolute;
+  inset: 0;
+  backdrop-filter: blur(3px);
+  background-color: rgba(255, 255, 255, 0.5);
 }
 
 .login-wrapper {
+  margin: auto;
   width: 320px;
   padding: 20px;
-  border-radius: 10px;
+  border-radius: var(--border-radius-medium);
   background-color: #f6f8fa;
 }
 

@@ -1,5 +1,6 @@
 <template>
   <a-form
+    class="account-password"
     :model="form"
     layout="vertical"
     size="large"
@@ -7,7 +8,7 @@
     :rules="rules"
     @submit="onSubmit"
   >
-    <a-form-item label="账号/邮箱号" field="account">
+    <a-form-item label="账号" field="account">
       <a-input v-model="form.account" />
     </a-form-item>
     <a-form-item label="密码" field="password">
@@ -61,4 +62,9 @@ const onSubmit = async () => {
 }
 </script>
 
-<style scoped></style>
+<style scoped>
+.account-password,
+label {
+  font-weight: bold;
+}
+</style>

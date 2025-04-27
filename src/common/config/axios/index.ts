@@ -3,7 +3,7 @@ import axios, { type AxiosRequestConfig } from 'axios'
 import { initInterceptors } from '@/common/config/axios/interceptors.ts'
 
 const request = axios.create({
-  baseURL: '',
+  baseURL: '/api',
   timeout: 10000,
   withCredentials: false,
   headers: {

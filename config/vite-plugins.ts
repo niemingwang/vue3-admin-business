@@ -39,7 +39,7 @@ export function useVitePlugins() {
     }),
     // svg图标
     createSvgIconsPlugin({
-      iconDirs: [resolve(process.cwd(), 'src/assets/svgs')],
+      iconDirs: [resolve(process.cwd(), 'src/assets/images/svg')],
       symbolId: 'icon-[name]'
     }),
     vitePluginForArco({

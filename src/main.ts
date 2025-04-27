@@ -30,7 +30,7 @@ const setupAll = () => {
 
   setupStore(app)
 
-  app.mount('#app')
+  app.mount('#app-container')
 }
 
 setupAll()

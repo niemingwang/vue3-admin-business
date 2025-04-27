@@ -8,8 +8,17 @@ export type LoginResponse = { accessToken: string; refreshToken: string }
  */
 export const login = (data: any) => {
   return request.post<LoginResponse>({
-    url: '/api/login',
+    url: '/user/login',
     data
+  })
+}
+
+/**
+ * 获取用户信息
+ */
+export const getInfo = () => {
+  return request.get<any>({
+    url: '/user/get'
   })
 }
 
@@ -18,6 +27,6 @@ export const login = (data: any) => {
  */
 export const logout = () => {
   return request.post({
-    url: '/api/logout'
+    url: '/user/logout'
   })
 }
