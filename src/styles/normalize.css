@@ -74,6 +74,8 @@ pre {
  */
 
 a {
+  all: unset; /* 重置所有默认样式（不推荐用于所有场景） */
+  cursor: pointer; /* 保留手型光标 */
   background-color: transparent;
 }
 
@@ -348,4 +350,11 @@ template {
 
 [hidden] {
   display: none;
+}
+
+ol,
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }

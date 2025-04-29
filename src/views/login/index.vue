@@ -43,7 +43,6 @@ defineOptions({ name: 'Login' })
   margin: auto;
   width: 320px;
   padding: 20px;
-  border-radius: var(--border-radius-medium);
   background-color: #f6f8fa;
 }
 

@@ -11,10 +11,11 @@ const ignores = {
 
 /** 全局生效配置 */
 const globalConfig = {
-  files: ['**/*.{js,mjs,cjs,ts,vue}'],
+  files: ['**/*.{js,jsx,mjs,cjs,ts,tsx,vue}'],
   languageOptions: { globals: globals.browser },
   rules: {
-    'vue/multi-word-component-names': 'off'
+    'vue/multi-word-component-names': 'off',
+    'vue/no-reserved-component-names': 'off'
   }
 }
 
@@ -32,6 +33,7 @@ const vueConfig = {
     }
   },
   rules: {
+    'no-undef': 'off',
     'no-console': 'warn',
     'vue/no-mutating-props': 'error',
     'no-debugger': 'warn',
@@ -40,13 +42,26 @@ const vueConfig = {
     'vue/no-unused-vars': 'off',
     'vue/no-deprecated-slot-attribute': 'off',
     'vue/no-deprecated-slot-scope-attribute': 'off',
-    'vue/no-deprecated-v-is': 'off'
+    'vue/no-deprecated-v-is': 'off',
+    '@typescript-eslint/no-explicit-any': 'off',
+    'vue/html-self-closing': [
+      'error',
+      {
+        html: {
+          void: 'always',
+          normal: 'never',
+          component: 'always'
+        },
+        svg: 'always',
+        math: 'always'
+      }
+    ]
   }
 }
 
 /** ts配置 */
 const tsConfig = {
-  files: ['**/*.ts'],
+  files: ['**/*.ts', '**/*.tsx'],
   rules: {
     'no-console': 'warn',
     'prettier/prettier': 'error',

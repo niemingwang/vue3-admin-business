@@ -2,7 +2,7 @@ export const MockMenus = [
   {
     id: 2913,
     parentId: 0,
-    name: '门店信息',
+    name: '门店',
     path: '/store',
     component: 'store/index',
     componentName: 'StoreInfo',
@@ -15,7 +15,7 @@ export const MockMenus = [
   {
     id: 1,
     parentId: 0,
-    name: '系统管理',
+    name: '系统',
     path: '/system',
     component: null,
     componentName: null,
@@ -453,7 +453,7 @@ export const MockMenus = [
   {
     id: 2,
     parentId: 0,
-    name: '基础设施',
+    name: '基础',
     path: '/infra',
     component: null,
     componentName: null,
@@ -783,7 +783,7 @@ export const MockMenus = [
   {
     id: 1117,
     parentId: 0,
-    name: '支付管理',
+    name: '支付',
     path: '/pay',
     component: null,
     componentName: null,
@@ -942,7 +942,7 @@ export const MockMenus = [
   {
     id: 1281,
     parentId: 0,
-    name: '报表管理',
+    name: '报表',
     path: '/report',
     component: null,
     componentName: null,
@@ -982,7 +982,7 @@ export const MockMenus = [
   {
     id: 2262,
     parentId: 0,
-    name: '客户中心',
+    name: '客户',
     path: '/member',
     component: null,
     componentName: null,
@@ -1114,7 +1114,7 @@ export const MockMenus = [
   {
     id: 2362,
     parentId: 0,
-    name: '品项管理',
+    name: '品项',
     path: '/mall',
     component: '',
     componentName: '',
@@ -1593,7 +1593,7 @@ export const MockMenus = [
   {
     id: 2072,
     parentId: 0,
-    name: '订单中心',
+    name: '订单',
     path: '/mall/trade',
     component: null,
     componentName: null,
@@ -1793,7 +1793,7 @@ export const MockMenus = [
   {
     id: 2914,
     parentId: 0,
-    name: '库存管理',
+    name: '库存',
     path: '/stock',
     component: '',
     componentName: '',
@@ -1806,7 +1806,7 @@ export const MockMenus = [
   {
     id: 2358,
     parentId: 0,
-    name: '统计中心',
+    name: '统计',
     path: '/mall/statistics',
     component: '',
     componentName: '',
@@ -1859,7 +1859,7 @@ export const MockMenus = [
   {
     id: 2084,
     parentId: 0,
-    name: '公众号管理',
+    name: '公众号',
     path: '/mp',
     component: null,
     componentName: null,

@@ -1,6 +1,6 @@
 import type { RouteRecordRaw } from 'vue-router'
 
-const Layout = () => import('@/layout/Layout.vue')
+const Main = () => import('@/layout/Main/index.vue')
 
 export const defaultRoutes: RouteRecordRaw[] = [
   {
@@ -11,9 +11,12 @@ export const defaultRoutes: RouteRecordRaw[] = [
     }
   },
   {
+    path: '',
+    redirect: '/dashboard'
+  },
+  {
     path: '/',
-    component: Layout,
-    redirect: '/dashboard',
+    component: Main,
     children: [
       {
         path: 'dashboard',
@@ -21,6 +24,24 @@ export const defaultRoutes: RouteRecordRaw[] = [
         name: 'Dashboard',
         meta: {
           title: '首页',
+          icon: 'dashboard'
+        }
+      },
+      {
+        path: 'demo',
+        component: () => import('@/views/demo/index.vue'),
+        name: 'Demo',
+        meta: {
+          title: 'Demo',
+          icon: 'dashboard'
+        }
+      },
+      {
+        path: 'system/tenant/list',
+        component: () => import('@/views/system/tenant/index.vue'),
+        name: 'Demo',
+        meta: {
+          title: 'Demo',
           icon: 'dashboard'
         }
       }

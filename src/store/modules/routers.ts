@@ -1,10 +1,11 @@
 import { store } from '@/store'
 import { CacheKey } from '@/common/constants/cache-key.ts'
 import { useStorageCache } from '@/common/hooks/use-storage-cache.ts'
+import { addMetaToTree } from '@/common/utils/tree-utils.ts'
 
 const { cache } = useStorageCache()
 
-export interface RouteStore {
+export interface RouteStoreState {
   routers: AppRouteRecordRaw[]
 }
 
@@ -13,7 +14,7 @@ export interface RouteStore {
  * 提供路由相关信息、对服务端返回的路由信息生成可访问的路由表
  */
 export const useRouterStore = defineStore('router', () => {
-  const routerInfo = reactive<RouteStore>({
+  const routerInfo = reactive<RouteStoreState>({
     routers: []
   })
 
@@ -24,7 +25,8 @@ export const useRouterStore = defineStore('router', () => {
       if (userRouters) {
         routers = userRouters
       }
-      console.log(routers)
+      routerInfo.routers = addMetaToTree(routers)
+      console.log(JSON.parse(JSON.stringify(routerInfo.routers)))
       resolve()
     })
   }

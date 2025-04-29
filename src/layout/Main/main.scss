@@ -1,0 +1,4 @@
+.app-main {
+  margin-left: calc(var(--first-nav-width, 64px) + var(--second-nav-width, 200px));
+  transition: margin-left 0.05s linear;
+}

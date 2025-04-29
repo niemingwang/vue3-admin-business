@@ -60,6 +60,7 @@ type Component<T = any> =
 declare global {
   interface AppRouteRecordRaw extends Omit<RouteRecordRaw, 'meta'> {
     name: string
+    path: string
     meta: RouteMeta
     component?: Component | string
     children?: AppRouteRecordRaw[]

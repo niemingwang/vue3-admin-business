@@ -8,8 +8,11 @@ export {}
 /* prettier-ignore */
 declare module 'vue' {
   export interface GlobalComponents {
+    BaseMenu: typeof import('./../../components/menu/base-menu.vue')['default']
     Icon: typeof import('./../../components/Icon/Icon.vue')['default']
+    RenderItem: typeof import('./../../components/menu/render-item.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    SubMenuInline: typeof import('./../../components/menu/sub-menu-inline.vue')['default']
   }
 }
