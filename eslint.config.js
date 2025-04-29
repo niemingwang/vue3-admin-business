@@ -11,10 +11,11 @@ const ignores = {
 
 /** 全局生效配置 */
 const globalConfig = {
-  files: ['**/*.{js,mjs,cjs,ts,vue}'],
+  files: ['**/*.{js,jsx,mjs,cjs,ts,tsx,vue}'],
   languageOptions: { globals: globals.browser },
   rules: {
-    'vue/multi-word-component-names': 'off'
+    'vue/multi-word-component-names': 'off',
+    'vue/no-reserved-component-names': 'off'
   }
 }
 
@@ -40,7 +41,19 @@ const vueConfig = {
     'vue/no-unused-vars': 'off',
     'vue/no-deprecated-slot-attribute': 'off',
     'vue/no-deprecated-slot-scope-attribute': 'off',
-    'vue/no-deprecated-v-is': 'off'
+    'vue/no-deprecated-v-is': 'off',
+    'vue/html-self-closing': [
+      'error',
+      {
+        html: {
+          void: 'always',
+          normal: 'never',
+          component: 'always'
+        },
+        svg: 'always',
+        math: 'always'
+      }
+    ]
   }
 }
 

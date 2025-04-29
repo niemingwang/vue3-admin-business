@@ -1,2 +1,3 @@
 /* 重置样式 */
 @import 'normalize.css';
+@import '@/layout/layout.scss';

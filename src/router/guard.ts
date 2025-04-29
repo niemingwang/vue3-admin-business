@@ -4,6 +4,7 @@ import { useNProgress } from '@/common/hooks/use-nprogress.ts'
 import { useUserStoreWithOut } from '@/store/modules/user.ts'
 import { useRouterStoreWithOut } from '@/store/modules/routers.ts'
 import { isWhiteList } from '@/router/white-list.ts'
+import { setupLayout, unmountLayout } from '@/layout/Aside/index.ts'
 
 const { start, done } = useNProgress()
 const { getToken } = useToken()
@@ -47,6 +48,11 @@ export const setupRouterGuard = (router: Router) => {
   // 全局后置守卫
   router.afterEach((to) => {
     document.body.title = to.meta.title || 'Vue3-admin-Business'
+    if (to.path === LOGIN_PATH) {
+      unmountLayout()
+    } else {
+      setupLayout()
+    }
     done()
   })
 }

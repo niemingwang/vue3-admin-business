@@ -3,9 +3,7 @@
   "compilerOptions": {
     "baseUrl": "./",
     "paths": {
-      "@/*": ["src/*"],
-      "components/*": ["src/components/*"],
-      "assets": ["src/assets/*"]
+      "@/*": ["src/*"]
     },
     "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
     "types": ["vite/client", "vite-plugin-svg-icons/client"],
